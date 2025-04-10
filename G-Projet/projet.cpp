@@ -50,7 +50,7 @@ void Projet::setDateFin(QDate date) { dateFin = date; }
 // Méthodes de validation
 bool Projet::validateNomPr(const QString &nom, QString &error) {
     if (nom.isEmpty()) {
-        error = "Le nom du projet ne peut pas être vide.";
+        error = "Le nom du projet ne peut pas etre vide.";
         return false;
     }
     if (nom.length() > 20) {
@@ -62,7 +62,7 @@ bool Projet::validateNomPr(const QString &nom, QString &error) {
 
 bool Projet::validateBudget(float budget, QString &error) {
     if (budget <= 0) {
-        error = "Le budget doit être supérieur à zéro.";
+        error = "Le budget doit etre supérieur à zéro.";
         return false;
     }
     return true;
@@ -70,7 +70,7 @@ bool Projet::validateBudget(float budget, QString &error) {
 
 bool Projet::validateDates(const QDate &dateDebut, const QDate &dateFin, QString &error) {
     if (dateDebut > dateFin) {
-        error = "La date de début doit être antérieure à la date de fin.";
+        error = "La date de début doit etre antérieure à la date de fin.";
         return false;
     }
     return true;

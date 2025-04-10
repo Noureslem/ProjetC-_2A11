@@ -51,7 +51,6 @@ public:
     static bool validateNomPr(const QString &nom, QString &error);
     static bool validateBudget(float budget, QString &error);
     static bool validateDates(const QDate &dateDebut, const QDate &dateFin, QString &error);
-
     // Opérations CRUD
     bool insertIntoDatabase(QSqlQuery &query);
     static bool deleteById(int id, QSqlQuery &query);

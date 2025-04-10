@@ -14,533 +14,38 @@
    <string>MW_projet</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>-140</x>
-      <y>-850</y>
-      <width>3360</width>
-      <height>2041</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../Tools Interface/background.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-50</y>
-      <width>231</width>
-      <height>241</height>
+      <y>0</y>
+      <width>1771</width>
+      <height>1211</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../../Downloads/7037bb42f8084200a8258d1983c93cc6-free__1_-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
+    <property name="widgetResizable">
      <bool>true</bool>
     </property>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>81</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/id-card-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Profil</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_4" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>280</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/user-tie-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Employée</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_5" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>410</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Client</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/hands-holding-child-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_6" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>540</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>RDV</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/calendar-days-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_7" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>930</y>
-      <width>121</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QWidget" name="scrollAreaWidgetContents">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>80</y>
-       <width>121</width>
-       <height>29</height>
+       <y>0</y>
+       <width>1769</width>
+       <height>1209</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Réclamation</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_33">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>81</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/message-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_8" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>670</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QPushButton" name="pushButton_8">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Projet</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_34">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>81</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/briefcase-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_9" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>800</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../../../Downloads/user-tie-solid (1).svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_9">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>91</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Consultant</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>81</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/circle-user-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="widget_10" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>1060</y>
-      <width>120</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius:9px;</string>
-    </property>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/right-from-bracket-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_10">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>90</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Sitka</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Quitter</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>63</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../Tools Interface/right-from-bracket-solid.svg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>640</y>
-      <width>201</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Sitka</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Les Statistiques</string>
-    </property>
-   </widget>
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>90</y>
-      <width>1331</width>
-      <height>691</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QTabWidget::pane {
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>120</y>
+        <width>1331</width>
+        <height>661</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabWidget::pane {
     border: 2px solid #2E543F; /* Bordure verte foncée */
     background: #F8F8F8; /* Fond clair */
     border-radius: 8px;
@@ -566,38 +71,38 @@ QTabBar::tab:hover {
     color: black;
 }
 </string>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Liste Des Projets</string>
-     </attribute>
-     <widget class="QWidget" name="widget_3" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1331</width>
-        <height>1021</height>
-       </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Liste Des Projets</string>
+       </attribute>
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1331</width>
+          <height>1021</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:9px;</string>
-      </property>
-      <widget class="QTableWidget" name="tableWidget">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>90</y>
-         <width>1031</width>
-         <height>391</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
+        </property>
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>90</y>
+           <width>1031</width>
+           <height>391</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
     background-color: #f8f9fa; /* Light gray background */
     border: 2px solid #4D6F50; /* Green border */
     gridline-color: #cccccc; /* Light gray grid lines */
@@ -630,119 +135,109 @@ QTableWidget::item:alternate {
     background-color: #E8F5E9; /* Light green */
 }
 </string>
-       </property>
-       <row/>
-       <column>
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Nom-Projet</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Complexité</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Statue</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Budget</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Nom-Client</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Date-Début</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Date-Fin</string>
-        </property>
-       </column>
-       <item row="0" column="0">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="1">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="2">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="3">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="4">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="5">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="6">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-       <item row="0" column="7">
-        <property name="text">
-         <string/>
-        </property>
-       </item>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>40</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Les Projets</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox">
-       <property name="geometry">
-        <rect>
-         <x>450</x>
-         <y>50</y>
-         <width>201</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <row/>
+         <column>
+          <property name="text">
+           <string>Nom-Projet</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Complexité</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Statue</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Budget</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Nom-Client</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date-Début</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date-Fin</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="1">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="2">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="3">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="4">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="5">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+         <item row="0" column="6">
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>131</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Les Projets</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+         <property name="geometry">
+          <rect>
+           <x>450</x>
+           <y>50</y>
+           <width>201</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -762,43 +257,24 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>Trier Par</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QLabel" name="label_32">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>520</y>
-         <width>241</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Supprimer Un Projet </string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_2">
-       <property name="geometry">
-        <rect>
-         <x>360</x>
-         <y>580</y>
-         <width>171</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <item>
+          <property name="text">
+           <string>Trier Par</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="geometry">
+          <rect>
+           <x>360</x>
+           <y>570</y>
+           <width>171</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -818,43 +294,43 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QLabel" name="label_35">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>580</y>
-         <width>241</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Choisir l'ID de Projet</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_supprimer">
-       <property name="geometry">
-        <rect>
-         <x>560</x>
-         <y>570</y>
-         <width>121</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+         </property>
+         <item>
+          <property name="text">
+           <string>Nom</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_35">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>580</y>
+           <width>301</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Choisir Le Nom de Projet</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_supprimer">
+         <property name="geometry">
+          <rect>
+           <x>560</x>
+           <y>560</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
                                 stop:0 rgba(193, 179, 255, 200), 
                                 stop:1 rgba(255, 228, 196, 200));
@@ -877,53 +353,98 @@ QPushButton:pressed {
     background: rgba(193, 179, 255, 180);
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Supprimer</string>
-       </property>
+         </property>
+         <property name="text">
+          <string>Supprimer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_annuler">
+         <property name="geometry">
+          <rect>
+           <x>660</x>
+           <y>47</y>
+           <width>131</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                stop:0 rgba(193, 179, 255, 200), 
+                                stop:1 rgba(255, 228, 196, 200));
+    color: #4A4A4A;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 74, 74, 50);
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                                stop:0 rgba(170, 153, 255, 200), 
+                                stop:1 rgba(255, 204, 153, 200));
+    color: black;
+}
+
+QPushButton:pressed {
+    background: rgba(193, 179, 255, 180);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Exporter PDF</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Ajouter Un Projet</string>
-     </attribute>
-     <widget class="QWidget" name="widget_11" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1331</width>
-        <height>1021</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Ajouter Un Projet</string>
+       </attribute>
+       <widget class="QWidget" name="widget_11" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1331</width>
+          <height>1021</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:9px;</string>
-      </property>
-      <widget class="QComboBox" name="comboBox_complexite">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>71</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+        </property>
+        <widget class="QComboBox" name="comboBox_complexite">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>71</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -943,46 +464,46 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>Faible</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Moyenne</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Élevée</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QComboBox" name="comboBox_statut">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>121</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <item>
+          <property name="text">
+           <string>Faible</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Moyenne</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Élevée</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="comboBox_statut">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>121</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1002,70 +523,70 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>En attente</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>En cours</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Terminé</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Annulé</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QLabel" name="label_18">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>171</y>
-         <width>79</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Budget:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_nom">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>21</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
+         </property>
+         <item>
+          <property name="text">
+           <string>En attente</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>En cours</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Terminé</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Annulé</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_18">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>171</y>
+           <width>79</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Budget:</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_nom">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>21</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1074,145 +595,145 @@ QComboBox::down-arrow {
 QLineEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_17">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>121</y>
-         <width>69</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Statut:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_16">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>71</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Complexité:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_15">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>21</y>
-         <width>154</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom du projet:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_21">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>300</y>
-         <width>147</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Date de début:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_22">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>350</y>
-         <width>119</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Date de fin:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_19">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>221</y>
-         <width>67</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Client:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_client">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>221</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_17">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>121</y>
+           <width>69</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Statut:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_16">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>71</y>
+           <width>121</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Complexité:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>21</y>
+           <width>154</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Nom du projet:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_21">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>300</y>
+           <width>147</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date de début:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>350</y>
+           <width>119</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date de fin:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_19">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>221</y>
+           <width>67</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Client:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_client">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>221</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1232,31 +753,31 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="dateEdit_debut">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>290</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDateEdit {
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit_debut">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>290</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDateEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1276,34 +797,34 @@ QDateEdit::drop-down {
 QDateEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="calendarPopup">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="dateEdit_fin">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>350</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDateEdit {
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit_fin">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>350</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDateEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1323,34 +844,34 @@ QDateEdit::drop-down {
 QDateEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="calendarPopup">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_budget">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>171</y>
-         <width>163</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDoubleSpinBox {
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_budget">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>171</y>
+           <width>163</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDoubleSpinBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1364,32 +885,32 @@ QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
 QDoubleSpinBox:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="suffix">
-        <string> DT</string>
-       </property>
-       <property name="maximum">
-        <double>1000000.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_annuler">
-       <property name="geometry">
-        <rect>
-         <x>1178</x>
-         <y>470</y>
-         <width>131</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>-1</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+         </property>
+         <property name="suffix">
+          <string> DT</string>
+         </property>
+         <property name="maximum">
+          <double>1000000.000000000000000</double>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_ajouter">
+         <property name="geometry">
+          <rect>
+           <x>1180</x>
+           <y>470</y>
+           <width>88</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
                                 stop:0 rgba(193, 179, 255, 200), 
                                 stop:1 rgba(255, 228, 196, 200));
@@ -1412,98 +933,53 @@ QPushButton:pressed {
     background: rgba(193, 179, 255, 180);
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Exporter PDF</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_ajouter">
-       <property name="geometry">
-        <rect>
-         <x>1083</x>
-         <y>470</y>
-         <width>88</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>-1</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
-                                stop:0 rgba(193, 179, 255, 200), 
-                                stop:1 rgba(255, 228, 196, 200));
-    color: #4A4A4A;
-    border-radius: 10px;
-    border: 1px solid rgba(74, 74, 74, 50);
-    padding: 8px 15px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
-                                stop:0 rgba(170, 153, 255, 200), 
-                                stop:1 rgba(255, 204, 153, 200));
-    color: black;
-}
-
-QPushButton:pressed {
-    background: rgba(193, 179, 255, 180);
-}
-</string>
-       </property>
-       <property name="text">
-        <string>Ajouter</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_36">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>400</y>
-         <width>120</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Employée</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_client_4">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>400</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <property name="text">
+          <string>Ajouter</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_36">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>400</y>
+           <width>120</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Employée</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_client_4">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>400</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1523,58 +999,58 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
+         </property>
+        </widget>
+       </widget>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Modifier Un Projet </string>
-     </attribute>
-     <widget class="QWidget" name="widget_12" native="true">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1331</width>
-        <height>1021</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Modifier Un Projet </string>
+       </attribute>
+       <widget class="QWidget" name="widget_12" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1331</width>
+          <height>1021</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
 border-radius:9px;</string>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_id">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>550</y>
-         <width>113</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="visible">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_modifier">
-       <property name="geometry">
-        <rect>
-         <x>1160</x>
-         <y>550</y>
-         <width>96</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>-1</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+        </property>
+        <widget class="QLineEdit" name="lineEdit_id">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>550</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_modifier">
+         <property name="geometry">
+          <rect>
+           <x>1160</x>
+           <y>550</y>
+           <width>96</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
                                 stop:0 rgba(193, 179, 255, 200), 
                                 stop:1 rgba(255, 228, 196, 200));
@@ -1597,110 +1073,110 @@ QPushButton:pressed {
     background: rgba(193, 179, 255, 180);
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Modifier</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_30">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>400</y>
-         <width>119</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Date de fin:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_31">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>460</y>
-         <width>120</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Employée</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_29">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>350</y>
-         <width>147</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Date de début:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_27">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>291</y>
-         <width>67</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Client:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_statut_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>191</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <property name="text">
+          <string>Modifier</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_30">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>400</y>
+           <width>119</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date de fin:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_31">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>460</y>
+           <width>120</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Employée</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_29">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>350</y>
+           <width>147</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date de début:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_27">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>291</y>
+           <width>67</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Client:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_statut_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>191</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1720,51 +1196,51 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>En attente</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>En cours</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Terminé</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Annulé</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QComboBox" name="comboBox_complexite_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>141</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <item>
+          <property name="text">
+           <string>En attente</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>En cours</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Terminé</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Annulé</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QComboBox" name="comboBox_complexite_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>141</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1784,103 +1260,103 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>Faible</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Moyenne</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Élevée</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>91</y>
-         <width>154</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom du projet:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>141</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Complexité:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_26">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>241</y>
-         <width>79</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Budget:</string>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="dateEdit_debut_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>340</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDateEdit {
+         </property>
+         <item>
+          <property name="text">
+           <string>Faible</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Moyenne</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Élevée</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>91</y>
+           <width>154</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Nom du projet:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_14">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>141</y>
+           <width>121</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Complexité:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>241</y>
+           <width>79</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Budget:</string>
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit_debut_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>340</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDateEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1900,34 +1376,34 @@ QDateEdit::drop-down {
 QDateEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="calendarPopup">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QDateEdit" name="dateEdit_fin_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>400</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDateEdit {
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit_fin_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>400</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDateEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -1947,53 +1423,53 @@ QDateEdit::drop-down {
 QDateEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="calendarPopup">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_25">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>191</y>
-         <width>69</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Statut:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_client_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>291</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>191</y>
+           <width>69</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Statut:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_client_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>291</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -2013,31 +1489,31 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-      </widget>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox_budget_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>241</y>
-         <width>181</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QDoubleSpinBox {
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_budget_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>241</y>
+           <width>181</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QDoubleSpinBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -2051,37 +1527,37 @@ QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
 QDoubleSpinBox:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-       <property name="suffix">
-        <string> DT</string>
-       </property>
-       <property name="maximum">
-        <double>1000000.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_nom_2">
-       <property name="geometry">
-        <rect>
-         <x>195</x>
-         <y>91</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
+         </property>
+         <property name="suffix">
+          <string> DT</string>
+         </property>
+         <property name="maximum">
+          <double>1000000.000000000000000</double>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_nom_2">
+         <property name="geometry">
+          <rect>
+           <x>195</x>
+           <y>91</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -2090,50 +1566,50 @@ QDoubleSpinBox:focus {
 QLineEdit:focus {
     border: 2px solid #6A9E70;
 }</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_24">
-       <property name="geometry">
-        <rect>
-         <x>21</x>
-         <y>21</y>
-         <width>232</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Sélectionner un projet:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_projet">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>34</y>
-         <width>401</width>
-         <height>33</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>21</y>
+           <width>232</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Sélectionner un projet:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_projet">
+         <property name="geometry">
+          <rect>
+           <x>440</x>
+           <y>34</y>
+           <width>401</width>
+           <height>33</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -2153,26 +1629,26 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_charger">
-       <property name="geometry">
-        <rect>
-         <x>858</x>
-         <y>34</y>
-         <width>92</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>-1</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_charger">
+         <property name="geometry">
+          <rect>
+           <x>858</x>
+           <y>34</y>
+           <width>92</width>
+           <height>32</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
                                 stop:0 rgba(193, 179, 255, 200), 
                                 stop:1 rgba(255, 228, 196, 200));
@@ -2195,34 +1671,34 @@ QPushButton:pressed {
     background: rgba(193, 179, 255, 180);
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Charger</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_client_3">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>450</y>
-         <width>1075</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Sitka</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QComboBox {
+         </property>
+         <property name="text">
+          <string>Charger</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_client_3">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>450</y>
+           <width>1075</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Sitka</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
     border: 2px solid #4D6F50;
     border-radius: 5px;
     padding: 5px;
@@ -2242,9 +1718,341 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     image: url(down_arrow.png);
 }</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>-380</x>
+        <y>-1580</y>
+        <width>3360</width>
+        <height>2391</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="ressource.qrc">:/Tools Interface/background.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_5" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>120</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:9px;</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>90</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sitka</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Client</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>63</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressource.qrc">:/Tools Interface/hands-holding-child-solid.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
+     <widget class="QWidget" name="widget_6" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>120</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:9px;</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>90</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sitka</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>RDV</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>63</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressource.qrc">:/Tools Interface/calendar-days-solid.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_8" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>390</y>
+        <width>120</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:9px;</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>90</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sitka</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Projet</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>81</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressource.qrc">:/Tools Interface/briefcase-solid.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_9" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>120</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:9px;</string>
+      </property>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>63</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../Downloads/user-tie-solid (1).svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>90</y>
+         <width>91</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sitka</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Consultant</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>81</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressource.qrc">:/Tools Interface/user-tie-solid.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_7" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>650</y>
+        <width>121</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:9px;</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>80</y>
+         <width>121</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sitka</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Réclamation</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>81</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="ressource.qrc">:/Tools Interface/message-solid.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-40</y>
+        <width>211</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="ressource.qrc">:/Tools Interface/mon_icone.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>label_5</zorder>
+     <zorder>tabWidget</zorder>
+     <zorder>widget_5</zorder>
+     <zorder>widget_6</zorder>
+     <zorder>widget_8</zorder>
+     <zorder>widget_9</zorder>
+     <zorder>widget_7</zorder>
+     <zorder>label_6</zorder>
     </widget>
    </widget>
   </widget>
@@ -2260,6 +2068,8 @@ QComboBox::down-arrow {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="ressource.qrc"/>
+ </resources>
  <connections/>
 </ui>

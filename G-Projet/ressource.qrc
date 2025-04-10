@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/dfsd"/>
+    <qresource prefix="/icons"/>
+    <qresource prefix="/">
+        <file>icons/bell.png</file>
+        <file>Tools Interface/background.png</file>
+        <file>Tools Interface/briefcase-solid.svg</file>
+        <file>Tools Interface/calendar-days-solid.svg</file>
+        <file>Tools Interface/circle-user-solid.svg</file>
+        <file>Tools Interface/hands-holding-child-solid.svg</file>
+        <file>Tools Interface/id-card-solid.svg</file>
+        <file>Tools Interface/message-solid.svg</file>
+        <file>Tools Interface/notification.png</file>
+        <file>Tools Interface/right-from-bracket-solid.svg</file>
+        <file>Tools Interface/user-tie-solid.svg</file>
+        <file>Tools Interface/mon_icone.png</file>
+    </qresource>
+</RCC>

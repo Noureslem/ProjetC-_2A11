@@ -1036,9 +1036,6 @@ public:
         retranslateUi(MW_projet);
 
         tabWidget->setCurrentIndex(0);
-
-
-        QMetaObject::connectSlotsByName(MW_projet);
     } // setupUi
 
     void retranslateUi(QMainWindow *MW_projet)

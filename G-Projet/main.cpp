@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "connection.h" // This should match your actual header file name
+#include "connection.h"
 #include <QApplication>
 #include <QMessageBox>
 
@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
 
     // Create connection to database using the static method
     bool test = Database::connectDB();
+    // Set application icon
+    a.setWindowIcon(QIcon(":/Tools Interface/mon_icone.png"));
 
     if (test) {
         MainWindow w;
