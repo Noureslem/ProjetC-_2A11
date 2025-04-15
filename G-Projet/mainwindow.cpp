@@ -1,22 +1,48 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "projet.h"
-#include "connection.h"
 #include <QDebug>
 #include <QDate>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QtCharts>
+#include <QAction>
+#include <QLineEdit>
+#include <QIcon>
+#include <QResizeEvent>
+#include <QScrollArea>
+#include <QSqlError>
+#include <QFile>
 
 QT_USE_NAMESPACE
+
+    // Event filter for notification widgets
+    class NotificationEventFilter : public QObject
+{
+public:
+    NotificationEventFilter(int id, MainWindow* mainWindow)
+        : QObject(mainWindow), notificationId(id), mainWindow(mainWindow) {}
+
+    bool eventFilter(QObject* watched, QEvent* event) override {
+        if (event->type() == QEvent::MouseButtonRelease) {
+            mainWindow->onNotificationClicked(notificationId);
+            return true;
+        }
+        return QObject::eventFilter(watched, event);
+    }
+
+private:
+    int notificationId;
+    MainWindow* mainWindow;
+};
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MW_projet)
+    , unreadCount(0)
 {
     ui->setupUi(this);
-
     // Setup notification system first
     setupNotificationSystem();
 
@@ -48,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
         "}"
         );
 
-    // Position the search bar at the top right, next to notification button
+    // Position the search bar at the top right
     searchBar->move(this->width() - 320, 10);
 
     // Connect the search bar signal
@@ -96,11 +122,315 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Create initial charts
     createStatutChart();
+
+    // Start the notification timer to check for new notifications
+    notificationTimer = new QTimer(this);
+    connect(notificationTimer, &QTimer::timeout, this, &MainWindow::checkForNewNotifications);
+    notificationTimer->start(30000); // Check every 30 seconds
+
+    // Load initial notifications
+    loadNotifications();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setupNotificationSystem    ()
+{
+    // Create notification button
+    notificationButton = new QPushButton(this);
+    notificationButton->setFixedSize(40, 40);
+    notificationButton->setIconSize(QSize(24, 24));
+    notificationButton->setCursor(Qt::PointingHandCursor);
+    notificationButton->setToolTip("Notifications");
+    notificationButton->setStyleSheet(
+        "QPushButton {"
+        "   border: none;"
+        "   border-radius: 20px;"
+        "   background-color: transparent;"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: rgba(200, 200, 200, 0.3);"
+        "}"
+        "QPushButton:pressed {"
+        "   background-color: rgba(150, 150, 150, 0.5);"
+        "}"
+        );
+    notificationButton->move(this->width() - 60, 10);
+
+    // Create notification menu
+    notificationMenu = new QMenu(this);
+    notificationMenu->setStyleSheet(
+        "QMenu {"
+        "   background-color: white;"
+        "   border: 1px solid #c0c0c0;"
+        "   border-radius: 5px;"
+        "   padding: 5px;"
+        "}"
+        "QMenu::item {"
+        "   padding: 5px 30px 5px 30px;"
+        "   border-radius: 3px;"
+        "}"
+        "QMenu::item:selected {"
+        "   background-color: #f0f0f0;"
+        "}"
+        );
+
+    // Connect notification button to show menu
+    connect(notificationButton, &QPushButton::clicked, this, &MainWindow::onNotificationButtonClicked);
+
+    // Initialize unread count
+    unreadCount = 0;
+    updateNotificationButton();
+}
+
+void MainWindow::updateNotificationButton()
+{
+    if (unreadCount > 0) {
+        // Try to use custom bell icon if available
+        if (QFile::exists(":/Tools Interface/bell-active.png")) {
+            notificationButton->setIcon(QIcon(":/Tools Interface/bell-active.png"));
+        } else {
+            // Fallback to standard icon
+            notificationButton->setIcon(style()->standardIcon(QStyle::SP_MessageBoxInformation));
+        }
+
+        // Add a badge with the count
+        QLabel* badge = new QLabel(notificationButton);
+        badge->setText(QString::number(unreadCount));
+        badge->setAlignment(Qt::AlignCenter);
+        badge->setStyleSheet(
+            "QLabel {"
+            "   color: white;"
+            "   background-color: #E74C3C;"
+            "   border-radius: 10px;"
+            "   font-weight: bold;"
+            "   font-size: 10px;"
+            "   min-width: 20px;"
+            "   min-height: 20px;"
+            "}"
+            );
+        badge->setGeometry(notificationButton->width() - 20, 0, 20, 20);
+        badge->show();
+
+        // Store the badge as a property to delete it later
+        QLabel* oldBadge = notificationButton->findChild<QLabel*>();
+        if (oldBadge && oldBadge != badge) {
+            oldBadge->deleteLater();
+        }
+    } else {
+        // Try to use custom bell icon if available
+        if (QFile::exists(":/Tools Interface/bell-inactive.png")) {
+            notificationButton->setIcon(QIcon(":/Tools Interface/bell-inactive.png"));
+        } else {
+            // Fallback to standard icon
+            notificationButton->setIcon(style()->standardIcon(QStyle::SP_MessageBoxQuestion));
+        }
+
+        // Remove any existing badge
+        QLabel* badge = notificationButton->findChild<QLabel*>();
+        if (badge) {
+            badge->deleteLater();
+        }
+    }
+}
+
+void MainWindow::onNotificationButtonClicked()
+{
+    // Clear the menu
+    notificationMenu->clear();
+
+    // Load notifications
+    loadNotifications();
+
+    // Show the menu below the notification button
+    notificationMenu->popup(notificationButton->mapToGlobal(QPoint(0, notificationButton->height())));
+}
+
+void MainWindow::loadNotifications()
+{
+    // Clear the menu
+    notificationMenu->clear();
+
+    // Query to get notifications, ordered by date (newest first) and read status (unread first)
+    QSqlQuery notificationQuery;
+    notificationQuery.prepare(
+        "SELECT NOTIFICATION_ID, NOTIFICATION_MESSAGE, NOTIFICATION_DATE, IS_READ "
+        "FROM NOTIFICATIONS "
+        "ORDER BY IS_READ ASC, NOTIFICATION_DATE DESC"
+        );
+
+    if (notificationQuery.exec()) {
+        int count = 0;
+        unreadCount = 0;
+
+        while (notificationQuery.next() && count < 10) { // Limit to 10 notifications
+            int id = notificationQuery.value("NOTIFICATION_ID").toInt();
+            QString message = notificationQuery.value("NOTIFICATION_MESSAGE").toString();
+            QDateTime date = notificationQuery.value("NOTIFICATION_DATE").toDateTime();
+            bool isRead = notificationQuery.value("IS_READ").toInt() == 1;
+
+            if (!isRead) {
+                unreadCount++;
+            }
+
+            QWidget* notificationWidget = createNotificationWidget(id, message, date, isRead);
+            QWidgetAction* widgetAction = new QWidgetAction(notificationMenu);
+            widgetAction->setDefaultWidget(notificationWidget);
+            notificationMenu->addAction(widgetAction);
+
+            count++;
+        }
+
+        // Add separator
+        notificationMenu->addSeparator();
+
+        // Add "Mark All as Read" action
+        QAction* markAllAsReadAction = new QAction("Marquer tout comme lu", notificationMenu);
+        connect(markAllAsReadAction, &QAction::triggered, this, &MainWindow::onMarkAllAsReadClicked);
+        notificationMenu->addAction(markAllAsReadAction);
+
+        // Update notification button
+        updateNotificationButton();
+    } else {
+        qDebug() << "Failed to load notifications:" << notificationQuery.lastError().text();
+    }
+}
+
+QWidget* MainWindow::createNotificationWidget(int id, const QString& message, const QDateTime& date, bool isRead)
+{
+    QWidget* widget = new QWidget();
+    widget->setMinimumWidth(300);
+    widget->setMaximumWidth(400);
+
+    QVBoxLayout* layout = new QVBoxLayout(widget);
+    layout->setContentsMargins(5, 5, 5, 5);
+    layout->setSpacing(3);
+
+    // Message label
+    QLabel* messageLabel = new QLabel(message);
+    messageLabel->setWordWrap(true);
+    messageLabel->setStyleSheet(isRead ? "color: #666666;" : "color: #000000; font-weight: bold;");
+    layout->addWidget(messageLabel);
+
+    // Date label
+    QLabel* dateLabel = new QLabel(date.toString("dd/MM/yyyy hh:mm"));
+    dateLabel->setStyleSheet("color: #999999; font-size: 10px;");
+    layout->addWidget(dateLabel);
+
+    // Make the widget clickable
+    widget->setProperty("notification_id", id);
+    widget->setCursor(Qt::PointingHandCursor);
+    widget->setStyleSheet(
+        "QWidget {"
+        "   background-color: " + QString(isRead ? "white" : "#F0F7FF") + ";"
+                                                  "   border-radius: 3px;"
+                                                  "   padding: 5px;"
+                                                  "}"
+                                                  "QWidget:hover {"
+                                                  "   background-color: #f0f0f0;"
+                                                  "}"
+        );
+
+    // Connect the widget to the notification clicked slot
+    widget->installEventFilter(new NotificationEventFilter(id, this));
+
+    return widget;
+}
+
+void MainWindow::onNotificationClicked(int notificationId)
+{
+    // Mark the notification as read
+    markNotificationAsRead(notificationId);
+
+    // Get notification details
+    QSqlQuery query;
+    query.prepare(
+        "SELECT PROJECT_ID, NOTIFICATION_TYPE, RELATED_ENTITY_ID, RELATED_ENTITY_TYPE "
+        "FROM NOTIFICATIONS "
+        "WHERE NOTIFICATION_ID = :id"
+        );
+    query.bindValue(":id", notificationId);
+
+    if (query.exec() && query.next()) {
+        int projectId = query.value("PROJECT_ID").toInt();
+        QString type = query.value("NOTIFICATION_TYPE").toString();
+
+        // Navigate to the appropriate tab based on notification type
+        if (projectId > 0) {
+            // Navigate to the project details
+            ui->tabWidget->setCurrentIndex(0); // Projects list tab
+
+            // Find the project in the table and select it
+            for (int row = 0; row < ui->tableWidget->rowCount(); ++row) {
+                if (ui->tableWidget->item(row, 0)->text().toInt() == projectId) {
+                    ui->tableWidget->selectRow(row);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Reload notifications
+    loadNotifications();
+}
+
+void MainWindow::markNotificationAsRead(int notificationId)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE NOTIFICATIONS SET IS_READ = 1 WHERE NOTIFICATION_ID = :id");
+    query.bindValue(":id", notificationId);
+
+    if (!query.exec()) {
+        qDebug() << "Failed to mark notification as read:" << query.lastError().text();
+    }
+}
+
+void MainWindow::onMarkAllAsReadClicked()
+{
+    markAllNotificationsAsRead();
+    loadNotifications();
+}
+
+void MainWindow::markAllNotificationsAsRead()
+{
+    QSqlQuery query;
+    query.prepare("UPDATE NOTIFICATIONS SET IS_READ = 1 WHERE IS_READ = 0");
+
+    if (!query.exec()) {
+        qDebug() << "Failed to mark all notifications as read:" << query.lastError().text();
+    }
+}
+
+void MainWindow::checkForNewNotifications()
+{
+    // This method is called periodically to check for new notifications
+    loadNotifications();
+}
+
+void MainWindow::addNotification(int projectId, const QString& type, const QString& message, int relatedEntityId, const QString& relatedEntityType)
+{
+    QSqlQuery query;
+    query.prepare(
+        "INSERT INTO NOTIFICATIONS "
+        "(NOTIFICATION_ID, PROJECT_ID, NOTIFICATION_TYPE, NOTIFICATION_MESSAGE, RELATED_ENTITY_ID, RELATED_ENTITY_TYPE) "
+        "VALUES "
+        "(NOTIFICATIONS_SEQ.NEXTVAL, :projectId, :type, :message, :relatedEntityId, :relatedEntityType)"
+        );
+    query.bindValue(":projectId", projectId > 0 ? projectId : QVariant(QVariant::Int));
+    query.bindValue(":type", type);
+    query.bindValue(":message", message);
+    query.bindValue(":relatedEntityId", relatedEntityId > 0 ? relatedEntityId : QVariant(QVariant::Int));
+    query.bindValue(":relatedEntityType", relatedEntityType.isEmpty() ? QVariant(QVariant::String) : relatedEntityType);
+
+    if (!query.exec()) {
+        qDebug() << "Failed to add notification:" << query.lastError().text();
+    } else {
+        // Reload notifications
+        loadNotifications();
+    }
 }
 
 void MainWindow::setupConnections()
@@ -118,202 +448,10 @@ void MainWindow::setupConnections()
     connect(ui->pushButton_charger, &QPushButton::clicked, this, &MainWindow::on_pushButton_charger_clicked);
     connect(ui->pushButton_modifier, &QPushButton::clicked, this, &MainWindow::on_pushButton_modifier_clicked);
     connect(ui->pushButton_supprimer, &QPushButton::clicked, this, &MainWindow::on_pushButton_supprimer_clicked);
-    // Remove this line:
-    // connect(ui->lineEdit_search, &QLineEdit::textChanged, this, &MainWindow::on_lineEdit_search_textChanged);
 
     isConnected = true; // Marquer comme connecté
 }
 
-void MainWindow::setupNotificationSystem()
-{
-    // Create notification button with bell icon
-    notificationButton = new QPushButton(this);
-    notificationButton->setIcon(QIcon(":/icons/bell.png"));
-    notificationButton->setIconSize(QSize(24, 24));
-    notificationButton->setFixedSize(40, 40);
-    notificationButton->setStyleSheet("QPushButton { border-radius: 20px; background-color: transparent; } "
-                                      "QPushButton:hover { background-color: #e0e0e0; }");
-
-    // Position the button in the top right corner
-    notificationButton->move(this->width() - 60, 10);
-
-    // Create notification menu
-    notificationMenu = new QMenu(this);
-    notificationMenu->setStyleSheet("QMenu { width: 300px; }");
-
-    // Initialize notification data
-    unreadCount = 0;
-
-    // Connect button to show menu
-    connect(notificationButton, &QPushButton::clicked, [this]() {
-        // Update notification widget before showing
-        notificationMenu->clear();
-        QWidgetAction* widgetAction = new QWidgetAction(notificationMenu);
-        widgetAction->setDefaultWidget(createNotificationWidget());
-        notificationMenu->addAction(widgetAction);
-
-        // Show menu below button
-        notificationMenu->popup(notificationButton->mapToGlobal(QPoint(0, notificationButton->height())));
-
-        // Reset unread count when opened
-        unreadCount = 0;
-        updateNotificationButton();
-    });
-
-    // Remove the connect for resized signal
-
-    // Add some sample notifications
-    addNotification("Bienvenue dans le système de gestion de projets!");
-    addNotification("Vous avez 3 projets en cours.");
-    addNotification("Un nouveau client a été ajouté.");
-
-    // Setup timer to add random notifications (for demo purposes)
-    QTimer* timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, [this]() {
-        QStringList messages = {
-            "Un projet a été mis à jour.",
-            "Nouvelle tâche assignée.",
-            "Réunion planifiée pour demain.",
-            "Date limite approchante pour le projet XYZ.",
-            "Budget mis à jour pour le projet ABC."
-        };
-        int index = QRandomGenerator::global()->bounded(messages.size());
-        addNotification(messages[index]);
-    });
-    timer->start(60000);  // Add a notification every minute
-}
-
-void MainWindow::addNotification(const QString& message)
-{
-    // Add timestamp to notification
-    QString timestamp = QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm");
-    QString fullMessage = message + " (" + timestamp + ")";
-
-    // Add to beginning of list (newest first)
-    notifications.prepend(fullMessage);
-
-    // Limit number of notifications
-    if (notifications.size() > 20) {
-        notifications.removeLast();
-    }
-
-    // Increment unread count
-    unreadCount++;
-
-    // Update button appearance
-    updateNotificationButton();
-}
-
-QWidget* MainWindow::createNotificationWidget()
-{
-    // Create widget to hold notifications
-    QWidget* widget = new QWidget();
-    QVBoxLayout* layout = new QVBoxLayout(widget);
-
-    // Add header
-    QLabel* headerLabel = new QLabel("Notifications");
-    headerLabel->setStyleSheet("font-weight: bold; font-size: 16px; padding: 8px;");
-    layout->addWidget(headerLabel);
-
-    // Add separator
-    QFrame* line = new QFrame();
-    line->setFrameShape(QFrame::HLine);
-    line->setFrameShadow(QFrame::Sunken);
-    layout->addWidget(line);
-
-    // Create scroll area for notifications
-    QScrollArea* scrollArea = new QScrollArea();
-    scrollArea->setWidgetResizable(true);
-    scrollArea->setFrameShape(QFrame::NoFrame);
-    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-
-    // Create widget to hold notification items
-    QWidget* scrollWidget = new QWidget();
-    QVBoxLayout* scrollLayout = new QVBoxLayout(scrollWidget);
-    scrollLayout->setSpacing(0);
-    scrollLayout->setContentsMargins(0, 0, 0, 0);
-
-    if (notifications.isEmpty()) {
-        // Show message if no notifications
-        QLabel* emptyLabel = new QLabel("Aucune notification");
-        emptyLabel->setAlignment(Qt::AlignCenter);
-        emptyLabel->setStyleSheet("color: gray; padding: 20px;");
-        scrollLayout->addWidget(emptyLabel);
-    } else {
-        // Add each notification
-        for (const QString& notification : notifications) {
-            QWidget* itemWidget = new QWidget();
-            QHBoxLayout* itemLayout = new QHBoxLayout(itemWidget);
-
-            // Add blue dot for new notifications
-            if (notifications.indexOf(notification) < unreadCount) {
-                QLabel* dotLabel = new QLabel();
-                dotLabel->setFixedSize(8, 8);
-                dotLabel->setStyleSheet("background-color: #1e88e5; border-radius: 4px;");
-                itemLayout->addWidget(dotLabel);
-            } else {
-                // Add spacing for alignment
-                itemLayout->addSpacing(8);
-            }
-
-            // Add notification text
-            QLabel* textLabel = new QLabel(notification);
-            textLabel->setWordWrap(true);
-            textLabel->setStyleSheet("padding: 8px 4px;");
-            itemLayout->addWidget(textLabel, 1);
-
-            // Add item to scroll area
-            scrollLayout->addWidget(itemWidget);
-
-            // Add separator except for last item
-            if (notifications.indexOf(notification) < notifications.size() - 1) {
-                QFrame* itemLine = new QFrame();
-                itemLine->setFrameShape(QFrame::HLine);
-                itemLine->setFrameShadow(QFrame::Sunken);
-                itemLine->setStyleSheet("color: #e0e0e0;");
-                scrollLayout->addWidget(itemLine);
-            }
-        }
-    }
-
-    // Add "Mark all as read" button
-    QPushButton* markReadButton = new QPushButton("Marquer tout comme lu");
-    markReadButton->setStyleSheet("text-align: center; padding: 8px; color: #1e88e5;");
-    connect(markReadButton, &QPushButton::clicked, [this]() {
-        unreadCount = 0;
-        updateNotificationButton();
-        notificationMenu->close();
-    });
-
-    // Set up scroll area
-    scrollArea->setWidget(scrollWidget);
-    scrollArea->setFixedHeight(300);  // Set maximum height
-
-    // Add components to main layout
-    layout->addWidget(scrollArea);
-    layout->addWidget(markReadButton);
-
-    return widget;
-}
-
-void MainWindow::updateNotificationButton()
-{
-    if (unreadCount > 0) {
-        // Show unread count badge
-        notificationButton->setStyleSheet("QPushButton { border-radius: 20px; background-color: transparent; } "
-                                          "QPushButton:hover { background-color: #e0e0e0; } "
-                                          "QPushButton::after { content: '" + QString::number(unreadCount) + "'; "
-                                                                           "position: absolute; top: 0; right: 0; "
-                                                                           "background-color: #ff4081; color: white; "
-                                                                           "border-radius: 10px; min-width: 20px; min-height: 20px; "
-                                                                           "font-size: 12px; font-weight: bold; }");
-    } else {
-        // No badge
-        notificationButton->setStyleSheet("QPushButton { border-radius: 20px; background-color: transparent; } "
-                                          "QPushButton:hover { background-color: #e0e0e0; }");
-    }
-}
 void MainWindow::setupStatisticsTab()
 {
     // Create a new tab for statistics
@@ -365,6 +503,7 @@ void MainWindow::onTabChanged(int index) {
         createStatutChart();
     }
 }
+
 void MainWindow::setupTable() {
     ui->tableWidget->setColumnCount(9);
 
@@ -587,8 +726,34 @@ void MainWindow::on_pushButton_supprimer_clicked() {
                                                               QMessageBox::Yes | QMessageBox::No);
 
     if (reply == QMessageBox::Yes) {
+        // Get project name before deletion for notification
+        QString projectName;
+        QSqlQuery nameQuery;
+        nameQuery.prepare("SELECT NOM_PR FROM PROJET WHERE ID_PR = :id");
+        nameQuery.bindValue(":id", projectId);
+        if (nameQuery.exec() && nameQuery.next()) {
+            projectName = nameQuery.value("NOM_PR").toString();
+        }
+
+        // First, delete all notifications related to this project
+        QSqlQuery deleteNotificationsQuery;
+        deleteNotificationsQuery.prepare("DELETE FROM NOTIFICATIONS WHERE PROJECT_ID = :projectId");
+        deleteNotificationsQuery.bindValue(":projectId", projectId);
+
+        if (!deleteNotificationsQuery.exec()) {
+            qDebug() << "Failed to delete notifications:" << deleteNotificationsQuery.lastError().text();
+            QMessageBox::critical(this, "Erreur", "Impossible de supprimer les notifications associées au projet");
+            return;
+        }
+
+        // Now delete the project
         if (Projet::deleteById(projectId, query)) {
             QMessageBox::information(this, "Succès", "Projet supprimé avec succès");
+
+            // Add a system notification (not linked to the deleted project)
+            addNotification(-1, "PROJECT_DELETED",
+                            "Le projet \"" + projectName + "\" a été supprimé");
+
             chargerProjets();
             chargerComboBoxProjets();
 
@@ -643,6 +808,20 @@ void MainWindow::on_pushButton_ajouter_clicked()
     // Ajouter le projet à la base de données
     if (projet.insertIntoDatabase(query)) {
         QMessageBox::information(this, "Succès", "Projet ajouté avec succès");
+
+        // Get the new project ID
+        int newProjectId = 0;
+        QSqlQuery idQuery;
+        idQuery.prepare("SELECT MAX(ID_PR) as ID FROM PROJET WHERE NOM_PR = :nom");
+        idQuery.bindValue(":nom", nom);
+        if (idQuery.exec() && idQuery.next()) {
+            newProjectId = idQuery.value("ID").toInt();
+        }
+
+        // Add notification
+        addNotification(-1, "PROJECT_ADDED",
+                        "Nouveau projet \"" + nom + "\" ajouté");
+
         viderFormulaireAjout();
         chargerProjets();
         chargerComboBoxProjets();
@@ -669,6 +848,10 @@ void MainWindow::on_pushButton_annuler_clicked() {
     if (!fileName.isEmpty()) {
         if (exportProjectsToPdf(fileName)) {
             QMessageBox::information(this, "Succès", "Projets exportés en PDF avec succès");
+
+            // Add notification
+            addNotification(-1, "PDF_EXPORT",
+                            "Les projets ont été exportés en PDF");
         } else {
             QMessageBox::critical(this, "Erreur", "Impossible d'exporter les projets en PDF");
         }
@@ -725,6 +908,39 @@ void MainWindow::on_pushButton_modifier_clicked() {
         return;
     }
 
+    // Get original project data for notification
+    Projet originalProjet = Projet::fetchProjetById(id, query);
+    QStringList changes;
+
+    if (originalProjet.getNomPr() != nom) {
+        changes << "Nom: " + originalProjet.getNomPr() + " → " + nom;
+    }
+    if (originalProjet.getComplexite() != complexite) {
+        changes << "Complexité: " + originalProjet.getComplexite() + " → " + complexite;
+    }
+    if (originalProjet.getStatutPr() != statut) {
+        changes << "Statut: " + originalProjet.getStatutPr() + " → " + statut;
+    }
+    if (originalProjet.getBudget() != budget) {
+        changes << "Budget: " + QString::number(originalProjet.getBudget()) + " → " + QString::number(budget);
+    }
+    if (originalProjet.getIdClient() != idClient) {
+        QString oldClient = Projet::getClientNameById(originalProjet.getIdClient(), query);
+        QString newClient = Projet::getClientNameById(idClient, query);
+        changes << "Client: " + oldClient + " → " + newClient;
+    }
+    if (originalProjet.getIdEmployee() != idEmployee) {
+        QString oldEmployee = Projet::getEmployeeNameById(originalProjet.getIdEmployee(), query);
+        QString newEmployee = Projet::getEmployeeNameById(idEmployee, query);
+        changes << "Employé: " + oldEmployee + " → " + newEmployee;
+    }
+    if (originalProjet.getDateDebut() != dateDebut) {
+        changes << "Date début: " + originalProjet.getDateDebut().toString("dd/MM/yyyy") + " → " + dateDebut.toString("dd/MM/yyyy");
+    }
+    if (originalProjet.getDateFin() != dateFin) {
+        changes << "Date fin: " + originalProjet.getDateFin().toString("dd/MM/yyyy") + " → " + dateFin.toString("dd/MM/yyyy");
+    }
+
     // Mettre à jour le projet dans la base de données
     bool updateSuccess = true;
 
@@ -739,6 +955,13 @@ void MainWindow::on_pushButton_modifier_clicked() {
 
     if (updateSuccess) {
         QMessageBox::information(this, "Succès", "Projet modifié avec succès");
+
+        // Add notification
+        if (!changes.isEmpty()) {
+            QString changeMessage = "Projet \"" + nom + "\" modifié: " + changes.join(", ");
+            addNotification(id, "PROJECT_MODIFIED", changeMessage);
+        }
+
         viderFormulaireModification();
         chargerProjets();
         chargerComboBoxProjets();
@@ -964,4 +1187,3 @@ void MainWindow::createStatutChart() {
 void MainWindow::on_lineEdit_search_textChanged(const QString &arg1) {
     searchProjects(arg1);
 }
-

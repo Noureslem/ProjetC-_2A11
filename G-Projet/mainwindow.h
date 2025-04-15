@@ -17,16 +17,17 @@
 #include <QBarCategoryAxis>
 #include <QValueAxis>
 #include <QPieSeries>
-// Add these includes at the top of your mainwindow.h file
-#include <QPushButton>
-#include <QMenu>
-#include <QWidgetAction>
 #include <QScrollArea>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QDateTime>
 #include <QTimer>
-#include <QRandomGenerator>
+#include <QPushButton>
+#include <QMenu>
+#include <QWidgetAction>
+
+class NotificationEventFilter;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MW_projet;
@@ -57,6 +58,13 @@ private slots:
     void on_comboBox_projet_currentIndexChanged(int index);
     void on_pushButton_charger_clicked();
     void on_pushButton_modifier_clicked();
+
+    // Notification system slots
+    void onNotificationButtonClicked();
+    void onMarkAllAsReadClicked();
+    void onNotificationClicked(int notificationId);
+    void checkForNewNotifications();
+
 private:
     Ui::MW_projet *ui;
     QSqlQuery query;
@@ -66,10 +74,19 @@ private:
     QChartView *chartView;
     QChartView *pieChartView;
 
+    // Notification system
+    QPushButton* notificationButton;
+    QMenu* notificationMenu;
+    int unreadCount;
+    QTimer* notificationTimer;
+
+    friend class NotificationEventFilter;
+
     // Méthodes d'initialisation
     void setupConnections();
     void setupTable();
     void setupStatisticsTab();
+    void setupNotificationSystem();
 
     // Méthodes de chargement des données
     void chargerProjets();
@@ -93,16 +110,15 @@ private:
     // Méthode pour obtenir les données pour les graphiques
     QMap<QString, int> getProjectCountsByStatus();
     void searchProjects(const QString &searchText);
-    // jdid
-    // Notification system
-    QPushButton* notificationButton;
-    QMenu* notificationMenu;
-    QList<QString> notifications;
-    int unreadCount;
-    void setupNotificationSystem();
-    void addNotification(const QString& message);
-    QWidget* createNotificationWidget();
+
+    // Notification system methods
+    void addNotification(int projectId, const QString& type, const QString& message, int relatedEntityId = -1, const QString& relatedEntityType = "");
     void updateNotificationButton();
+    void loadNotifications();
+    QWidget* createNotificationWidget(int id, const QString& message, const QDateTime& date, bool isRead);
+    void markNotificationAsRead(int notificationId);
+    void markAllNotificationsAsRead();
+
 protected:
     void resizeEvent(QResizeEvent* event) override {
         QMainWindow::resizeEvent(event);
@@ -121,4 +137,3 @@ protected:
 };
 
 #endif // MAINWINDOW_H
-
